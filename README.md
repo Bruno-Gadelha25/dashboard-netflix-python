@@ -2,6 +2,12 @@
 
 Projeto em Python com interface web local via Streamlit para analisar o catálogo da Netflix com foco em storytelling de dados.
 
+## Links do projeto
+
+- **GitHub:** <https://github.com/Bruno-Gadelha25/dashboard-netflix-python>
+- **Vercel:** <https://dashboard-netflix-python.vercel.app>
+- **Vitrine estática:** `vercel-static/index.html`
+
 ## Tema
 
 Análise do catálogo da Netflix.
@@ -48,6 +54,21 @@ streamlit run app.py
 
 O aplicativo detecta automaticamente o CSV compatível com o esquema da Netflix na pasta do projeto.
 
+## Como fazer deploy
+
+O projeto principal roda em Streamlit, então a publicação em Vercel foi feita por meio de uma vitrine estática dentro da pasta `vercel-static`.
+
+Fluxo usado no deploy:
+
+1. Gerar a vitrine estática com `index.html` e capturas do dashboard.
+2. Entrar na pasta `vercel-static`.
+3. Executar:
+
+```bash
+vercel
+vercel --prod
+```
+
 ## Como o banco SQLite foi criado
 
 Na inicialização do aplicativo, o script:
@@ -83,6 +104,16 @@ O dashboard foi organizado como uma história de dados:
 7. **Relações entre variáveis**
 8. **Tabela interativa**
 9. **Conclusão da análise**
+
+## Prints
+
+Espaço para registrar imagens do projeto apresentado:
+
+- Captura da página principal do dashboard.
+- Captura da linha temporal do catálogo.
+- Captura dos filtros laterais.
+- Captura da tabela interativa.
+- Captura da vitrine na Vercel.
 
 ## Justificativa dos gráficos
 
