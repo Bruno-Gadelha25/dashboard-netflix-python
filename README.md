@@ -107,9 +107,12 @@ O dashboard foi organizado como uma história de dados:
 
 ## Prints
 
-Espaço para registrar imagens do projeto apresentado:
+Espaço para registrar imagens do projeto apresentado. O print principal do dashboard fica em `assets/dashboard-home.png`:
 
-- Captura da página principal do dashboard.
+![Dashboard Netflix - visão geral](assets/dashboard-home.png)
+
+Se quiser adicionar mais imagens, você pode incluir no diretório `assets/`:
+
 - Captura da linha temporal do catálogo.
 - Captura dos filtros laterais.
 - Captura da tabela interativa.

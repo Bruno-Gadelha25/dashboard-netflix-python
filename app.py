@@ -121,33 +121,47 @@ st.markdown(
             linear-gradient(180deg, {COLORS["bg"]} 0%, #0b1320 100%);
         color: {COLORS["text"]};
     }}
+    header[data-testid="stHeader"],
+    div[data-testid="stToolbar"],
+    #MainMenu,
+    footer {{
+        visibility: hidden;
+        height: 0;
+    }}
     .block-container {{
+        max-width: 1600px;
         padding-top: 1.2rem;
         padding-bottom: 2rem;
+        padding-left: clamp(1rem, 2vw, 2.5rem);
+        padding-right: clamp(1rem, 2vw, 2.5rem);
     }}
     section[data-testid="stSidebar"] {{
         background: linear-gradient(180deg, {COLORS["panel"]} 0%, #0b1320 100%);
         border-right: 1px solid {COLORS["border"]};
     }}
     .story-title {{
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         font-weight: 800;
         line-height: 1.05;
         margin-bottom: 0.35rem;
         color: {COLORS["text"]};
     }}
     .story-subtitle {{
-        font-size: 1.05rem;
+        font-size: 1.12rem;
+        line-height: 1.7;
         color: {COLORS["muted"]};
         margin-bottom: 0.7rem;
     }}
     .story-callout {{
-        background: rgba(19, 34, 56, 0.82);
-        border: 1px solid {COLORS["border"]};
+        background: linear-gradient(180deg, rgba(19, 34, 56, 0.96), rgba(13, 23, 38, 0.9));
+        border: 1px solid rgba(92, 200, 255, 0.18);
         border-left: 4px solid {COLORS["accent"]};
-        border-radius: 16px;
-        padding: 1rem 1.1rem;
+        border-radius: 18px;
+        padding: 1.05rem 1.15rem;
         margin: 0.8rem 0 1.1rem 0;
+        font-size: 1.02rem;
+        line-height: 1.75;
+        box-shadow: 0 18px 40px rgba(5, 10, 18, 0.26);
     }}
     .story-callout strong {{
         color: {COLORS["text"]};
@@ -161,11 +175,12 @@ st.markdown(
         font-weight: 700;
     }}
     .story-section {{
-        background: rgba(14, 23, 38, 0.74);
-        border: 1px solid {COLORS["border"]};
-        border-radius: 18px;
-        padding: 1.05rem 1.05rem 0.95rem 1.05rem;
+        background: linear-gradient(180deg, rgba(15, 24, 39, 0.94), rgba(10, 16, 27, 0.9));
+        border: 1px solid rgba(92, 200, 255, 0.12);
+        border-radius: 20px;
+        padding: 1.1rem 1.15rem 1rem 1.15rem;
         margin-bottom: 1rem;
+        box-shadow: 0 16px 38px rgba(4, 9, 18, 0.24);
     }}
     .story-section h3 {{
         margin-top: 0;
@@ -175,30 +190,53 @@ st.markdown(
     .story-section p {{
         color: {COLORS["muted"]};
         margin-bottom: 0;
+        font-size: 1.02rem;
+        line-height: 1.78;
     }}
     .metric-box {{
-        background: linear-gradient(180deg, rgba(19, 34, 56, 0.95), rgba(17, 28, 46, 0.88));
-        border: 1px solid {COLORS["border"]};
-        border-radius: 16px;
-        padding: 0.9rem 1rem;
+        background: linear-gradient(180deg, rgba(22, 39, 63, 0.98), rgba(12, 20, 34, 0.96));
+        border: 1px solid rgba(92, 200, 255, 0.22);
+        border-radius: 18px;
+        padding: 1rem 1.05rem;
         height: 100%;
+        box-shadow:
+            0 16px 32px rgba(4, 9, 18, 0.26),
+            inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }}
     .metric-label {{
         color: {COLORS["muted"]};
-        font-size: 0.82rem;
-        letter-spacing: 0.02em;
-        margin-bottom: 0.25rem;
+        font-size: 0.86rem;
+        letter-spacing: 0.035em;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
     }}
     .metric-value {{
-        color: {COLORS["text"]};
-        font-size: 1.65rem;
+        color: #ffffff;
+        font-size: clamp(1.95rem, 2.2vw, 2.55rem);
         font-weight: 800;
-        line-height: 1.15;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        text-shadow: 0 0 18px rgba(92, 200, 255, 0.08);
     }}
     .metric-detail {{
         color: {COLORS["muted"]};
-        font-size: 0.82rem;
-        margin-top: 0.25rem;
+        font-size: 0.9rem;
+        margin-top: 0.4rem;
+        line-height: 1.45;
+    }}
+    div[data-testid="stCaptionContainer"] p {{
+        font-size: 0.95rem;
+        color: {COLORS["muted"]};
+    }}
+    div[data-testid="stAlert"] {{
+        background: rgba(19, 34, 56, 0.92);
+        border: 1px solid rgba(92, 200, 255, 0.16);
+        color: {COLORS["text"]};
+    }}
+    div[data-testid="stAlert"] p {{
+        font-size: 1.02rem;
+        line-height: 1.7;
+        color: {COLORS["text"]};
     }}
     div[data-testid="stSidebar"] .stSelectbox label,
     div[data-testid="stSidebar"] .stMultiSelect label,
