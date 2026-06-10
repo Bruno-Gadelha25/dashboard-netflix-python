@@ -9,3 +9,5 @@ dist/
 .vercel/
 .DS_Store
 netflix.db
+/netflix-dashboard.png
+/netflix-dashboard-wait.png
