@@ -4,7 +4,7 @@ Projeto em Python com interface web local via Streamlit para analisar o catálog
 
 ## Links do projeto
 
-- **GitHub:** <https://github.com/Bruno-Gadelha25/dashboard-netflix-python>
+- **GitHub:** <https://github.com/Bruno-Gadelha25/dashboard-netflix-storytelling>
 - **Vercel:** <https://dashboard-netflix-python.vercel.app>
 - **Vitrine estática:** `vercel-static/index.html`
 
@@ -52,7 +52,34 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+4. Abra no navegador:
+
+```txt
+http://localhost:8501
+```
+
+Se a porta `8501` estiver ocupada, rode:
+
+```bash
+streamlit run app.py --server.port 8502
+```
+
+Nesse caso, abra:
+
+```txt
+http://localhost:8502
+```
+
+Se o comando `python` apontar para outro executável no seu Windows, use o atalho `abrir_dashboard.bat` ou o comando `py -3.13 -m streamlit run app.py`. O atalho tenta `8501` e troca para `8502` se a porta já estiver ocupada.
+
 O aplicativo detecta automaticamente o CSV compatível com o esquema da Netflix na pasta do projeto.
+
+## Estrutura principal
+
+- `app.py`: dashboard principal e navegável no localhost.
+- `netflix_titles.csv`: dataset original da Netflix.
+- `netflix.db`: banco SQLite gerado/validado a partir do CSV.
+- `vercel-static/`: vitrine estática com capturas, usada apenas como apresentação.
 
 ## Como fazer deploy
 

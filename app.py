@@ -541,6 +541,22 @@ def database_has_expected_schema(db_path: Path) -> bool:
         return False
 
 
+def database_matches_tables(db_path: Path, tables: dict[str, pd.DataFrame]) -> bool:
+    if not db_path.exists():
+        return False
+    try:
+        with sqlite3.connect(db_path) as conn:
+            for table_name, table_df in tables.items():
+                existing_count = conn.execute(
+                    f"SELECT COUNT(*) FROM {table_name}"
+                ).fetchone()[0]
+                if existing_count != len(table_df):
+                    return False
+        return True
+    except sqlite3.Error:
+        return False
+
+
 def write_database(db_path: Path, tables: dict[str, pd.DataFrame]) -> None:
     with sqlite3.connect(db_path) as conn:
         for table_name, table_df in tables.items():
@@ -567,6 +583,7 @@ def ensure_database(db_path: Path, tables: dict[str, pd.DataFrame], source_mtime
         not db_path.exists()
         or not database_has_expected_schema(db_path)
         or db_path.stat().st_mtime < source_mtime
+        or not database_matches_tables(db_path, tables)
     )
     if needs_refresh:
         write_database(db_path, tables)
