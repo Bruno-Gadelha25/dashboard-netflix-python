@@ -1,13 +1,14 @@
 # Vitrine estática do Dashboard Netflix
 
 Esta pasta contém uma versão estática do projeto criada para deploy na Vercel.
-Ela serve diretamente a captura `netflix.png`, para que o endereço público
-mostre exatamente a imagem do dashboard solicitada.
+Ela funciona como uma apresentação visual do dashboard principal feito em
+Streamlit.
 
 ## Conteúdo
 
-- `index.html` servindo a imagem principal
-- `netflix.png` com a captura do dashboard
+- `index.html` com a narrativa do projeto
+- capturas exportadas do dashboard em `assets/`
+- links para o repositório GitHub
 
 ## Como publicar na Vercel
 
@@ -27,5 +28,5 @@ vercel --prod
 ## Observação
 
 O dashboard interativo completo continua no arquivo `app.py` dentro da pasta
-principal do projeto. A Vercel agora hospeda apenas a captura estática
-solicitada.
+principal do projeto. A vitrine estática existe para facilitar o deploy em
+ambiente compatível com Vercel.
